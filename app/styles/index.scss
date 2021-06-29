@@ -1,0 +1,16 @@
+$primary_color: #613af1;
+
+@mixin truncate-text($line-clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.t {
+  color: #4a4a4a;
+}
+
+body {
+  margin: 0;
+}

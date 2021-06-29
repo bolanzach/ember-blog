@@ -1,0 +1,10 @@
+<footer class='post-footer' data-test-post-footer>
+  {{yield}}
+  <div class='post-footer__menu-content'>
+    <Time::TimeElapsed @initialTime={{@post.publishedTimestamp}} />
+    <Home::Post::Contents::PostLike
+      @isPostLiked={{@post.isLikedByUser}}
+      @onLikePost={{@onLikePost}}
+    />
+  </div>
+</footer>

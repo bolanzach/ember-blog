@@ -1,0 +1,10 @@
+{{! Renders the list of basic-posts }}
+
+<section class='posts-container'>
+  <div class='container is-widescreen'>
+    <h2 class='is-size-4'>Your top posts</h2>
+    {{#each this.orderedPosts as |post|}}
+      <Home::Post::BasicPost @post={{post}} @onLikePost={{@onLikePost}} />
+    {{/each}}
+  </div>
+</section>

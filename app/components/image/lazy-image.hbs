@@ -1,0 +1,5 @@
+{{#if (or this.initialImageState this.isImageLoaded)}}
+  <img src={{@src}} ...attributes />
+{{else}}
+  <div class='lazy-image--loading' ...attributes></div>
+{{/if}}

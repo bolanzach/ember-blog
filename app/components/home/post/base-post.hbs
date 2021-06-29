@@ -1,0 +1,14 @@
+{{!
+  Meant to share some common functionality amongst the differet Post types.
+  This could be improved by using the blank-component pattern but we're keeping it simple
+}}
+
+<article data-test-base-post ...attributes>
+  {{yield (hash isContent=true)}}
+  <Home::Post::Contents::PostFooter
+    @post={{@post}}
+    @onLikePost={{action @onLikePost @post}}
+  >
+    {{yield (hash isFooterContent=true)}}
+  </Home::Post::Contents::PostFooter>
+</article>

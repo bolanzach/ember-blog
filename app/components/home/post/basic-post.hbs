@@ -1,0 +1,19 @@
+<LinkTo @route='setup-app.post' @model={{@post.id}}>
+  <Home::Post::BasePost
+    class='basic-post'
+    @post={{@post}}
+    @onLikePost={{@onLikePost}}
+    data-test-basic-post
+    as |PostContainer|
+  >
+    {{#if PostContainer.isContent}}
+      <header class='basic-post__header' data-test-basic-post-header>
+        {{@post.title}}
+      </header>
+      <div class='basic-post__body'>
+        <Home::Post::Contents::PostImage @image={{@post.imageSrc}} />
+        <div class='basic-post__content'>{{@post.content}}</div>
+      </div>
+    {{/if}}
+  </Home::Post::BasePost>
+</LinkTo>

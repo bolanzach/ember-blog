@@ -1,0 +1,13 @@
+<button
+  type='button'
+  class={{if
+    @isPostLiked
+    'post-like post-like--liked'
+    'post-like post-like--not-liked'
+  }}
+  {{on 'click' this.handleClick}}
+  data-test-post-like
+  ...attributes
+>
+  <FaIcon @icon='heart' />
+</button>

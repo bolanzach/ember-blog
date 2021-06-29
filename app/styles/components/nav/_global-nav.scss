@@ -1,0 +1,17 @@
+.global-nav {
+  display: flex;
+
+  &__container {
+    background-color: #262626;
+    padding: 0.7rem;
+  }
+
+  &__title {
+    color: $primary_color;
+    font-weight: 700;
+
+    :visited {
+      color: $primary_color;
+    }
+  }
+}

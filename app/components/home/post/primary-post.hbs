@@ -1,0 +1,25 @@
+<Home::Post::BasePost
+  class='card primary-post'
+  @post={{@post}}
+  @onLikePost={{@onLikePost}}
+  data-test-primary-post
+  as |PostContainer|
+>
+  {{#if PostContainer.isContent}}
+    <LinkTo @route='setup-app.post' @model={{@post.id}}>
+      <div class='primary-post__content-container'>
+        <Image::LazyImage
+          @src={{@post.imageSrc}}
+          alt='blog post image'
+          class='primary-post__image'
+        />
+        <header class='t primary-post__title'>
+          {{@post.title}}
+        </header>
+        <div
+          class='t card-content primary-post__content'
+        >{{@post.content}}</div>
+      </div>
+    </LinkTo>
+  {{/if}}
+</Home::Post::BasePost>

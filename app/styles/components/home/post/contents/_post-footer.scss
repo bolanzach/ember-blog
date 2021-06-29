@@ -1,0 +1,12 @@
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  align-items: flex-end;
+
+  &__menu-content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: baseline;
+  }
+}

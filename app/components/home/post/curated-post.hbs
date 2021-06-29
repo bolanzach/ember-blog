@@ -1,0 +1,55 @@
+<Home::Post::BasePost
+  class='card curated-post'
+  @post={{@post}}
+  @onLikePost={{@onLikePost}}
+  data-test-curated-post
+  as |PostContainer|
+>
+  {{#if PostContainer.isContent}}
+    <LinkTo
+      @route='setup-app.post'
+      @model={{@post.id}}
+      {{on 'mouseenter' this.handleMouseEnter}}
+      {{on 'mouseleave' this.handleMouseExit}}
+    >
+      <header class='t card-header-title curated-post__title'>
+        {{@post.title}}
+      </header>
+
+      <div class='t curated-post__content-container'>
+        <div
+          class='curated-post__desktop-image-container'
+          style={{concat 'background-image: url(' this.backgroundImageUrl ');'}}
+        >
+          <div
+            class='curated-post__desktop-image-container-mask
+              {{if
+                this.isHovering
+                'curated-post__desktop-image-container-mask--is-hover'
+              }}'
+          ></div>
+          <div
+            class='curated-post__animated-content
+              {{if this.isHovering 'curated-post__animated-content--is-hover'}}'
+          >
+            <div
+              class='curated-post__animated-content-text'
+            >{{@post.content}}</div>
+            <button class='button'>Read more</button>
+          </div>
+        </div>
+        <Home::Post::Contents::PostImage
+          class='curated-post__image'
+          @image={{@post.imageSrc}}
+        />
+        <div class='curated-post__content'>{{@post.content}}</div>
+      </div>
+    </LinkTo>
+  {{/if}}
+
+  {{#if PostContainer.isFooterContent}}
+    <header class='card-header-title curated-post__footer-title'>
+      {{@post.title}}
+    </header>
+  {{/if}}
+</Home::Post::BasePost>

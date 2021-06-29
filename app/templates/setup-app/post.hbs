@@ -1,0 +1,18 @@
+<main class='blog-post-view'>
+  <div class='container is-widescreen'>
+    <header>
+      <h1 class='is-size-1'>
+        {{@model.post.title}}
+      </h1>
+      <Time::TimeElapsed @initialTime={{@model.post.publishedTimestamp}} />
+    </header>
+    <img
+      src={{@model.post.imageSrc}}
+      alt='blog post image'
+      class='primary-post__image'
+    />
+    <article>
+      {{@model.post.content}}
+    </article>
+  </div>
+</main>

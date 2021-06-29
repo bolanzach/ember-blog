@@ -1,0 +1,31 @@
+<section class='curated-posts'>
+  <div class='container is-widescreen'>
+    <h2 class='is-size-4'>Our top picks</h2>
+
+    {{! The primary posts }}
+    <div class='tile is-ancestor'>
+      <div class='tile is-parent is-vertical'>
+        {{#each this.primaryBlogPosts as |primaryPost|}}
+          <div class='tile is-child'>
+            <Home::Post::PrimaryPost
+              @post={{primaryPost}}
+              @onLikePost={{@onLikePost}}
+            />
+          </div>
+        {{/each}}
+      </div>
+
+      {{! The curated posts }}
+      <div class='tile is-4 is-vertical is-parent curated-posts__right-posts'>
+        {{#each this.curatedPosts as |post|}}
+          <div class='tile is-child'>
+            <Home::Post::CuratedPost
+              @post={{post}}
+              @onLikePost={{@onLikePost}}
+            />
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

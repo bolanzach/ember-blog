@@ -1,0 +1,12 @@
+.hero-container {
+  padding: 1.5rem 1rem;
+  flex-direction: row;
+
+  &__title {
+    line-height: 0.4;
+  }
+
+  &__title-2 {
+    line-height: 1.1;
+  }
+}

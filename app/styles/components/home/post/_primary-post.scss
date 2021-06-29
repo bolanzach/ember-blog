@@ -1,0 +1,18 @@
+.primary-post {
+  .lazy-image--loading {
+    background-color: gray;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__content {
+    @include truncate-text(8);
+    padding-top: 0;
+  }
+}

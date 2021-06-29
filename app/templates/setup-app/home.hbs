@@ -1,0 +1,11 @@
+<main>
+  <Home::Hero />
+  <Home::CuratedPosts
+    @posts={{this.model.blogSummary.featuredPosts.content}}
+    @onLikePost={{this.handleLikePost}}
+  />
+  <Home::Posts
+    @posts={{this.model.blogSummary.posts.content}}
+    @onLikePost={{this.handleLikePost}}
+  />
+</main>

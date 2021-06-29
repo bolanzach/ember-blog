@@ -1,0 +1,16 @@
+.curated-posts {
+  background-color: #eee;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+
+  // Doing a little surgery here so that the right-side posts do not get too small
+  &__right-posts {
+    &.tile.is-4 {
+      @include until($desktop) {
+        width: 50%;
+      }
+      @include until($tablet) {
+        width: initial;
+      }
+    }
+  }
+}

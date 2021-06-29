@@ -1,0 +1,21 @@
+.post-like {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--not-liked {
+    svg {
+      color: #262626;
+    }
+  }
+
+  &--liked {
+    svg {
+      color: $primary_color;
+    }
+  }
+}
